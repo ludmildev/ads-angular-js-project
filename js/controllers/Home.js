@@ -4,7 +4,7 @@
 
 app.controller('Home', function($scope, $log, CategoriesData) {
 	$scope.name = "Home";
-	
+
 	/* CategoriesData.get(function(data){
 		$scope.categories = data;
 	}); */
