@@ -2,7 +2,7 @@
  * Created by ludmil on 21.12.2014 г..
  */
 
-var app = angular.module('adsApp', ['ngResource', 'ngRoute', 'base64'])
+var app = angular.module('adsApp', ['ngResource', 'ngRoute'])
 	.config(function ($routeProvider) {
 		$routeProvider.when('/', {
 			templateUrl: 'templates/home.html',
