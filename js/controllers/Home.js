@@ -3,9 +3,9 @@
  */
 
 app.controller('Home', function($scope, $log, CategoriesData) {
-	$scope.name = "Home view";
+	$scope.name = "Home";
 	
-	CategoriesData.get(function(data){
+	/* CategoriesData.get(function(data){
 		$scope.categories = data;
-	});
+	}); */
 });
