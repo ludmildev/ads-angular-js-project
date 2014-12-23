@@ -1,5 +1,11 @@
-#header {
-    background-color: #5cb85c;
+.greenBg {
+	background-color: #5cb85c;
+}
+.greenBorderBottom {
+	border-bottom: 2px solid green;
+}
+.greenBorder {
+	border: 2px solid green;
 }
 #header h3 {
     float: left;
@@ -10,6 +16,34 @@
     margin-top: 15px;
     font-size: 16px;
 }
+#nonLoggedMenu {
+	float: left;
+    padding: 10px 25px;
+    width: 230px;
+	text-align: center;
+}
+#nonLoggedMenu button {
+	width: 60%;
+	color: white;
+	background-color: #5cb85c;
+	border: 2px solid green;
+	background-image: none;
+	outline: none;
+}
+#loggedMenu {
+	float: left;
+	width: 230px;
+	height: 210px;
+}
+#adContainer { 
+	width: 70%;
+}
+#adContainer li {
+	width: 100%;
+	background-color: #5cb85c;
+}
+
+
 .floatRight {
     float: right;
 }
@@ -40,3 +74,58 @@
 .mrgHor2 {margin-bottom: 10px; margin-top: 10px;}
 .mrgHor3 {margin-bottom: 15px; margin-top: 15px;}
 .mrgHor4 {margin-bottom: 20px; margin-top: 20px;}
+
+.txtCenter {
+	text-align: center;
+}
+.separator {
+	border-bottom: 1px solid green;
+    border-top: 1px solid green;
+    display: block;
+	margin: 5px auto;
+    width: 70%;
+}
+.listStyle { 
+	padding-left: 35px;
+	width: 85%;
+}
+.listStyle li{
+	list-style-type: none;
+	color: black;
+	padding: 3px 5px;
+	font-size: 16px;
+	cursor: pointer;
+}
+.listStyle li:hover{
+	background-color: orange;
+	border: 1px solid darkorange;
+}
+.cleanList {
+	padding: 0px;
+	list-style-type: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

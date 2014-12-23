@@ -2,10 +2,8 @@
  * Created by ludmil on 21.12.2014 г..
  */
 
-app.controller('Home', function($scope, $log, CategoriesData) {
+app.controller('Home', function($scope, $log) {
 	$scope.name = "Home";
+	$scope.isLogged = false;
 
-	/* CategoriesData.get(function(data){
-		$scope.categories = data;
-	}); */
 });

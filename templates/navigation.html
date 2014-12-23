@@ -1,1 +1,22 @@
-<span>navigation</span>
+
+<div ng-if="isLogged == false">
+	<div id="nonLoggedMenu" class="greenBg greenBorder mrgRight4 mrgBot2">
+		<h4>To publish a new ad, please login.</h4>
+		<button type="button" class="btn btn-default btn-lg mrgBot2">Login</button>
+		<button type="button" class="btn btn-default btn-lg">Register</button>
+	</div>
+</div>
+<div ng-if="isLogged == true">
+	<div id="loggedMenu" class="greenBg greenBorder mrgRight4 mrgBot2">
+		<div class="txtCenter">
+			<h2>Navigation</h2>
+			<div class="separator"></div>
+		</div>
+		<ul class="listStyle mrgTop2">
+			<li>Home</li>
+			<li>My Ads</li>
+			<li>Publish New Ad</li>
+			<li>Edit Profile</li>
+		</ul>
+	</div>
+</div>
