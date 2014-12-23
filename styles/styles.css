@@ -1,0 +1,42 @@
+#header {
+    background-color: #5cb85c;
+}
+#header h3 {
+    float: left;
+    margin: 15px 0px;
+}
+#header .user-menu {
+    float: right;
+    margin-top: 15px;
+    font-size: 16px;
+}
+.floatRight {
+    float: right;
+}
+.floatLeft {
+    float: left;
+}
+.mrgTop {margin-top: 5px;}
+.mrgTop2 {margin-top: 10px;}
+.mrgTop3 {margin-top: 15px;}
+.mrgTop4 {margin-top: 20px;}
+
+.mrgBot {margin-bottom: 5px;}
+.mrgBot2 {margin-bottom: 10px;}
+.mrgBot3 {margin-bottom: 15px;}
+.mrgBot4 {margin-bottom: 20px;}
+
+.mrgLeft {margin-left: 5px;}
+.mrgLeft2 {margin-left: 10px;}
+.mrgLeft3 {margin-left: 15px;}
+.mrgLeft4 {margin-left: 20px;}
+
+.mrgRight {margin-right: 5px;}
+.mrgRight2 {margin-right: 10px;}
+.mrgRight3 {margin-right: 15px;}
+.mrgRight4 {margin-right: 20px;}
+
+.mrgHor {margin-bottom: 5px; margin-top: 5px;}
+.mrgHor2 {margin-bottom: 10px; margin-top: 10px;}
+.mrgHor3 {margin-bottom: 15px; margin-top: 15px;}
+.mrgHor4 {margin-bottom: 20px; margin-top: 20px;}
