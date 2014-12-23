@@ -1,6 +1,6 @@
 
-<ul class="floatLeft cleanList" id="adContainer">
-	<li class="greenBorder mrgBot3">1</li>
-	<li class="greenBorder mrgBot3">2</li>
-	<li class="greenBorder mrgBot3">3</li>
-</ul>
+<div ng-controller="Ads">
+	<ul class="floatLeft cleanList" id="adContainer" ng-repeat="ad in ads">
+		<li class="greenBorder mrgBot3">{{ad.title}} - {{ad.text}}</li>
+	</ul>
+</div>

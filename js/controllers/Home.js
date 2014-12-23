@@ -5,5 +5,4 @@
 app.controller('Home', function($scope, $log) {
 	$scope.name = "Home";
 	$scope.isLogged = false;
-
 });
