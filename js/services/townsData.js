@@ -2,7 +2,7 @@ app.factory('TownsData', function ($http) {
 	function getAll(success, error) {
 		$http({
 			method: 'GET',
-			url: 'http://softuni-ads.azurewebsites.net/api/Towns'
+			url: 'http://localhost:1337/api/Towns'
 			// headers: {}
 			// data: {}
 		})

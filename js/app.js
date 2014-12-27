@@ -9,3 +9,5 @@ var app = angular.module('adsApp', ['ngResource', 'ngRoute'])
             'redirectTo' : '/'
         });
 	});
+
+//angular.element(document.getElementsByClassName('ng-view')).scope().name

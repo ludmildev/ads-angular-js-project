@@ -2,7 +2,7 @@ app.factory('CategoriesData', function ($http) {
 	function getAll(success, error) {
 		$http({
 			method: 'GET',
-			url: 'http://softuni-ads.azurewebsites.net/api/Categories'
+			url: 'http://localhost:1337/api/Categories'
 			// headers: {}
 			// data: {}
 		})
