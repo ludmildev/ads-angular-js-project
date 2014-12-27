@@ -15,6 +15,6 @@ app.factory('CategoriesData', function ($http) {
 	}
 
 	return {
-		get: getAll,
+		get: getAll
 	}
 })

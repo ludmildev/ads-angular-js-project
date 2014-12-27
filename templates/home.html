@@ -11,21 +11,43 @@
         </div>
     </div>
     <div class="col-md-6">
+        <div ng-repeat="ad in ads">
+            <div>
+                <div class="pull-left">{{ad.title}}</div>
+                <div class="pull-left">{{ad.date | date: 'd-MM-yyy'}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
 
+                </div>
+            </div>
+        </div>
     </div>
     <div class="col-md-3">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
+        <div class="panel panel-info" ng-controller="Categories">
+            <div class="panel-heading text-center">
                 <h3 class="panel-title">Categories</h3>
             </div>
             <div class="panel-body">
+                <div class="list-group">
+                    <a class="list-group-item active" href="#">All</a>
+                    <a ng-repeat="category in categories" class="list-group-item" href="#">
+                        {{category.name}}
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="panel panel-primary">
-            <div class="panel-heading">
+        <div class="panel panel-info" ng-controller="Towns">
+            <div class="panel-heading text-center">
                 <h3 class="panel-title">Towns</h3>
             </div>
             <div class="panel-body">
+                <div class="list-group">
+                    <a class="list-group-item active" href="#">All</a>
+                    <a ng-repeat="town in towns" class="list-group-item" href="#">
+                        {{town.name}}
+                    </a>
+                </div>
             </div>
         </div>
     </div>

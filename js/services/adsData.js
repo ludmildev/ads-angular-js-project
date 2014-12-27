@@ -10,7 +10,7 @@ app.factory('AdsData', function ($http) {
 			success(data);
 		})
 		.error(function (data, status, headers, config) {
-			error(data, status, headers(), config);
+			error(data, status, headers, config);
 		});
 	}
 
