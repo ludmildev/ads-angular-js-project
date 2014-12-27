@@ -2,7 +2,7 @@ app.factory('AdsData', function ($http) {
 	function getAll(success, error) {
 		$http({
 			method: 'GET',
-			url: 'http://softuni-ads.azurewebsites.net/api/Ads'
+			url: 'http://localhost:1337/api/Ads'
 			// headers: {}
 			// data: {}
 		})
@@ -15,6 +15,6 @@ app.factory('AdsData', function ($http) {
 	}
 
 	return {
-		get: getAll,
+		getAllAds: getAll
 	};
 })
