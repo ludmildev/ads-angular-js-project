@@ -1,16 +1,16 @@
 
 var app = angular.module('adsApp', ['ngResource', 'ngRoute', 'ui.bootstrap'])
 	.config(function ($routeProvider) {
-        $routeProvider.when('/ads', {
+        $routeProvider.when('/', {
             templateUrl: 'templates/home.html',
             controller: 'Home'
         });
-        $routeProvider.when('/ads/page/:StartPage', {
+        $routeProvider.when('/page/:StartPage', {
             templateUrl: 'templates/home.html',
             controller: 'Home'
         });
         $routeProvider.otherwise({
-            'redirectTo' : '/ads'
+            'redirectTo' : '/'
         });
     });
 
