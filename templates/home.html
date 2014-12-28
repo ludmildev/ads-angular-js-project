@@ -11,14 +11,18 @@
         </div>
     </div>
     <div class="col-md-6">
-        <div ng-repeat="ad in ads">
-            <div>
-                <div class="pull-left">{{ad.title}}</div>
-                <div class="pull-left">{{ad.date | date: 'd-MM-yyy'}}</div>
+        <div ng-repeat="ad in ads" class="well">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="pull-left txt16 mrgBot">
+                        <strong>{{ad.title}}</strong>
+                    </div>
+                    <div class="pull-right">{{ad.date | date: 'd-MM-yyy'}}</div>
+                </div>
             </div>
             <div class="row">
                 <div class="col-md-5">
-
+                    <img on-error-src="images/no_img.png" ng-src="{{ad.imageDataUrl}}"/>
                 </div>
             </div>
         </div>
