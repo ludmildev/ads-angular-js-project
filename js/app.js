@@ -1,13 +1,17 @@
 
-var app = angular.module('adsApp', ['ngResource', 'ngRoute'])
+var app = angular.module('adsApp', ['ngResource', 'ngRoute', 'ui.bootstrap'])
 	.config(function ($routeProvider) {
-		$routeProvider.when('/', {
-			templateUrl: 'templates/home.html',
+        $routeProvider.when('/ads', {
+            templateUrl: 'templates/home.html',
             controller: 'Home'
-		});
-        $routeProvider.otherwise({
-            'redirectTo' : '/'
         });
-	});
+        $routeProvider.when('/ads/page/:StartPage', {
+            templateUrl: 'templates/home.html',
+            controller: 'Home'
+        });
+        $routeProvider.otherwise({
+            'redirectTo' : '/ads'
+        });
+    });
 
 //angular.element(document.getElementsByClassName('ng-view')).scope().name

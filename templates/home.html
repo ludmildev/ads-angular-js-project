@@ -46,29 +46,34 @@
                 </div>
             </div>
         </div>
+        <div class="text-center well-small">
+            <pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+        </div>
     </div>
     <div class="col-md-3">
-        <div class="panel panel-info" ng-controller="Categories">
+        <div class="panel panel-info">
             <div class="panel-heading text-center">
                 <h3 class="panel-title">Categories</h3>
             </div>
             <div class="panel-body">
                 <div class="list-group">
                     <a class="list-group-item active" href="#">All</a>
-                    <a ng-repeat="category in categories" class="list-group-item" href="#">
+                    <a ng-repeat="category in categories" ng-click="changeCategoryId({{category.id}});"
+                       class="list-group-item" href="#">
                         {{category.name}}
                     </a>
                 </div>
             </div>
         </div>
-        <div class="panel panel-info" ng-controller="Towns">
+        <div class="panel panel-info">
             <div class="panel-heading text-center">
                 <h3 class="panel-title">Towns</h3>
             </div>
             <div class="panel-body">
                 <div class="list-group">
                     <a class="list-group-item active" href="#">All</a>
-                    <a ng-repeat="town in towns" class="list-group-item" href="#">
+                    <a ng-repeat="town in towns"  ng-click="changeTownId({{town.id}});"
+                       class="list-group-item" href="#">
                         {{town.name}}
                     </a>
                 </div>
