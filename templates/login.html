@@ -1,0 +1,31 @@
+
+<div ng-if="loginError != ''">
+    <div class="alert alert-dismissable alert-danger">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>Oh snap!</strong> {{loginError}}
+    </div>
+</div>
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Login</h3>
+    </div>
+    <div class="panel-body">
+        <form class="bs-component" name="loginForm">
+            <div class="form-group">
+                <label class="control-label" for="username">Username:</label>
+                <input required id="username" name="username" ng-model="loginData.username" class="form-control" type="text" />
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="password">Password:</label>
+                <input required id="password" name="password" ng-model="loginData.password" class="form-control" type="password" />
+            </div>
+            <div class="form-group">
+                <div class="col-lg-10">
+                    <a href="#/"><button class="btn btn-default">Cancel</button></a>
+                    <button class="btn btn-primary" ng-click="login(loginData);" type="submit">Login</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -2,9 +2,11 @@
  * Created by ludmil on 21.12.2014 г..
  */
 
-app.controller('Home', function($scope, $log, AdsData, $routeParams, CategoriesData, TownsData) {
+app.controller('Home', function($scope, $log, AdsData, $routeParams, CategoriesData, TownsData, session) {
 	$scope.name = "Home";
 	$scope.isLogged = false;
+
+    $scope.username = session.get('username'); //TODO finish it
 
     CategoriesData.get(function(data){
         $scope.categories = data;
