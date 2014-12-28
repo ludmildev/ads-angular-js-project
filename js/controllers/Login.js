@@ -1,6 +1,5 @@
 
 app.controller('Login', function($scope, $http, $log, $location, session) {
-	$scope.name = "Home";
 
     $scope.loginError = '';
     $scope.loginData = {
@@ -19,21 +18,30 @@ app.controller('Login', function($scope, $http, $log, $location, session) {
             }
         })
         .success(function (data, status, headers, config) {
-                console.log(data);
             session.set('token', data.access_token);
             session.set('token_type', data.token_type);
             session.set('username', data.username);
             session.set('isAdmin', data.isAdmin);
+            session.set('isLogged', true);
 
             $location.path('#/');
         })
         .error(function (data, status, headers, config) {
             $scope.loginError = data.error_description;
+            session.set('isLogged', false);
         });
     }
 
     $scope.login = function (loginData) {
         login(loginData);
     };
+
+    $scope.logout = function () {
+        session.remove('token');
+        session.remove('token_type');
+        session.remove('username');
+        session.remove('isAdmin');
+        session.set('isLogged', false);
+    }
 
 });

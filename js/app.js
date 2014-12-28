@@ -13,9 +13,23 @@ var app = angular.module('adsApp', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ng
             templateUrl: 'templates/login.html',
             controller: 'Login'
         });
+        $routeProvider.when('/logout', {
+            templateUrl: 'templates/login.html',
+            controller: 'Login'
+        });
         $routeProvider.otherwise({
             'redirectTo' : '/'
         });
     });
+
+app.run(function ($rootScope, $cookies, session, $location) {
+    $rootScope.isLogged = $cookies.isLogged;
+    $rootScope.username = $cookies.username;
+    $rootScope.token = $cookies.token;
+    $rootScope.logout = function () {
+        session.logout();
+        $location.path('#/');
+    }
+});
 
 //angular.element(document.getElementsByClassName('ng-view')).scope().name

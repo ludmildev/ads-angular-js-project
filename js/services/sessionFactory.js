@@ -9,6 +9,13 @@ app.factory('session', function ($cookieStore) {
         },
         remove: function (key) {
             $cookieStore.remove(key);
+        },
+        logout: function () {
+            $cookieStore.remove('token');
+            $cookieStore.remove('token_type');
+            $cookieStore.remove('username');
+            $cookieStore.remove('isAdmin');
+            $cookieStore.put('isLogged', false);
         }
     }
 });
