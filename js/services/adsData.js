@@ -1,6 +1,6 @@
-app.factory('AdsData', function ($resource) {
+app.factory('adsData', function ($resource, baseUrl) {
     var resource = $resource(
-        'http://localhost:1337/api/Ads/?StartPage=:StartPage&CategoryId=:CategoryId',
+        baseUrl + 'Ads/?StartPage=:StartPage&CategoryId=:CategoryId',
         {
             StartPage: '@StartPage',
             CategoryId: '@CategoryId'

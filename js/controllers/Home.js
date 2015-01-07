@@ -1,22 +1,23 @@
 
-app.controller('Home', function($scope, $log, AdsData, $routeParams, CategoriesData, TownsData, $cookies) {
+app.controller('Home', function($scope, $log, $routeParams, categoriesData, townsData, adsData) {
 
-	$scope.isLogged = $cookies.isLogged;
-    $scope.username = $cookies.username;
-
-    CategoriesData.get(function(data){
-        $scope.categories = data;
-    });
-
-    TownsData.get(function(data){
-        $scope.towns = data;
-    });
+    categoriesData.getCategories()
+        .$promise
+        .then(function(data){
+            $scope.categories = data;
+        });
+    townsData.getTowns()
+        .$promise
+        .then(function(data){
+            $scope.towns = data;
+        });
 
     $scope.townId = undefined;
     $scope.categoryId = undefined;
 
     function allAds (page) {
-        AdsData.getAllAds(page, $scope.categoryId, $scope.townId).$promise
+        adsData.getAllAds(page, $scope.categoryId, $scope.townId)
+            .$promise
             .then(function (data) {
                 $scope.ads = data.ads;
 
