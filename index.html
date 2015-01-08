@@ -8,16 +8,16 @@
 	<link rel="stylesheet" href="styles/bootstrap-theme.min.css" />
 	<link rel="stylesheet" type="text/css" href="styles/styles.css" />
 </head>
-<body ng-app="adsApp">
+<body ng-app="adsApp" ng-controller="MainController">
 
     <div class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand" href="#/">Ads</a>
             </div>
-            <!-- //TODO finish login logic -->
-            <div ng-hide="isLogged" id="navbar-main" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
+
+            <div ng-show="isLogged()" id="navbar-main" class="navbar-collapse collapse">
+                <ul ng-show="isLogged()" class="nav navbar-nav navbar-right">
                     <li><a href="#/" ng-bind="username">{{username}}</a></li>
                     <li><a class="pointer" ng-click="logout()">logout</a></li>
                 </ul>
@@ -43,6 +43,7 @@
 
 	<script src="js/controllers/Home.js"></script>
 	<script src="js/controllers/Login.js"></script>
+    <script src="js/controllers/MainController.js"></script>
 
 	<script src="js/services/categoriesData.js"></script>
 	<script src="js/services/townsData.js"></script>
@@ -51,6 +52,8 @@
 	<script src="js/services/userData.js"></script>
 
     <script src="js/directives/noImageDirective.js"></script>
+    <script src="js/directives/left-navigation.js"></script>
+    <script src="js/directives/public-ads.js"></script>
 
     <script src="lib/ui-bootstrap-tpls-0.12.0.min.js"></script>
 

@@ -1,4 +1,4 @@
-var app = angular.module('adsApp', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ngCookies'])
+var app = angular.module('adsApp', ['ngResource', 'ngRoute', 'ui.bootstrap'])
 	.config(function ($routeProvider) {
         $routeProvider.when('/', {
             templateUrl: 'templates/home.html',
@@ -12,9 +12,9 @@ var app = angular.module('adsApp', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ng
             templateUrl: 'templates/login.html',
             controller: 'Login'
         });
-        $routeProvider.when('/logout', {
-            templateUrl: 'templates/login.html',
-            controller: 'Login'
+        $routeProvider.when('/register', {
+            templateUrl: 'templates/register.html',
+            controller: 'Register'
         });
         $routeProvider.otherwise({
             'redirectTo' : '/'
@@ -23,15 +23,3 @@ var app = angular.module('adsApp', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ng
 
 //http://localhost:1337/api/
 app.constant('baseUrl', 'http://softuni-ads.azurewebsites.net/api/');
-
-app.run(function ($rootScope, $cookies, session, $location) {
-    $rootScope.isLogged = $cookies.isLogged;
-    $rootScope.username = $cookies.username;
-    $rootScope.token = $cookies.token;
-    $rootScope.logout = function () {
-        session.logout();
-        $location.path('#/');
-    }
-});
-
-//angular.element(document.getElementsByClassName('ng-view')).scope().name

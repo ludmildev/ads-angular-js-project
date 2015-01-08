@@ -1,55 +1,10 @@
 {{someData}}
 <div class="row">
     <div class="col-md-3">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">To Publish new ad, please login</h3>
-            </div>
-            <div class="panel-body text-center">
-                <a href="#/login" class="btn btn-info">Login</a>
-                <a href="#/register" class="btn btn-info">Register</a>
-            </div>
-        </div>
+        <left-navigation></left-navigation>
     </div>
     <div class="col-md-6">
-        <div ng-repeat="ad in ads" class="well">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="pull-left txt16 mrgBot">
-                        <strong>{{ad.title}}</strong>
-                    </div>
-                    <div class="pull-right">{{ad.date | date: 'd-MMM-yyyy'}}</div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 adImageContainer">
-                    <img class="adImage" on-error-src="images/no_img.png" ng-src="{{ad.imageDataUrl}}"/>
-                </div>
-                <div class="col-md-9">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="mrgBot">{{ad.text}}</div>
-                            <div class="borderBot mrgBot"></div>
-                            <div class="row">
-                                <div class="col-md-2">Name:</div>
-                                <div class="col-md-10">{{ad.ownerName}}</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-2">Email:</div>
-                                <div class="col-md-10">{{ad.ownerEmail}}</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-2">Phone:</div>
-                                <div class="col-md-10">{{ad.ownerPhone}}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="text-center well-small">
-            <pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></pagination>
-        </div>
+        <public-ads></public-ads>
     </div>
     <div class="col-md-3">
         <div class="panel panel-info">

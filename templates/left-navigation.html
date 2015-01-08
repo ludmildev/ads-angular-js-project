@@ -1,0 +1,27 @@
+<div class="panel panel-primary" ng-show="!isLogged()">
+    <div class="panel-heading">
+        <h3 class="panel-title">To Publish new ad, please login</h3>
+    </div>
+    <div class="panel-info">
+        <div class="panel-body">
+            <div class="list-group">
+                <a href="#/login" class="list-group-item pointer">Login</a>
+                <a href="#/register" class="list-group-item pointer">Register</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel panel-primary" ng-show="isLogged()">
+    <div class="panel-heading">
+        <h3 class="panel-title">Navigation</h3>
+    </div>
+    <div class="panel-info">
+        <div class="panel-body">
+            <div class="list-group">
+                <a href="#/" class="list-group-item pointer">Home</a>
+                <a href="#/" class="list-group-item pointer">My Ads</a>
+                <a href="#/" class="list-group-item pointer">Publish New Ad</a>
+            </div>
+        </div>
+    </div>
+</div>
