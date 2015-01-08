@@ -1,13 +1,7 @@
 
-app.controller('Login', function($scope, $log, $location, userData, baseUrl) {
+app.controller('Login', function($scope, $log, $location, userData) {
 
     $scope.loginError = '';
-    /*
-    $scope.loginData = {
-        username: '',
-        password: ''
-    };
-    */
 
     $scope.login = function (loginData) {
         userData.login(loginData, function () {

@@ -1,0 +1,73 @@
+<form class="well">
+  <fieldset>
+    <legend class="text-center">Register</legend>
+    <div class="row form-group">
+      <div class="col-md-6">
+        <div>
+          <label for="username" class="col-md-4 pull-left">Username: <b class="text-danger">*</b></label>
+          <div class="pull-right text-danger col-md-8" ng-show="registerForm.username.$error.required && registerForm.username.$dirty">Required!</div>
+        </div>
+        <input type="text" name="username" class="form-control" id="username" placeholder="Username" ng-model="credentials.username" required>
+      </div>
+    </div>
+
+    <div class="row form-group">
+      <div class="col-md-6">
+        <div>
+          <label for="username" class="col-md-4 pull-left">Password: <b class="text-danger">*</b></label>
+          <div class="pull-right text-danger col-md-8" ng-show="registerForm.username.$error.required && registerForm.username.$dirty">Required!</div>
+        </div>
+        <input type="text" name="username" class="form-control" id="username" placeholder="Username" ng-model="credentials.username" required>
+      </div>
+      <div class="col-md-6">
+        <div>
+          <label for="username" class="col-md-4 pull-left">Re-password: <b class="text-danger">*</b></label>
+          <div class="pull-right text-danger col-md-8" ng-show="registerForm.username.$error.required && registerForm.username.$dirty">Required!</div>
+        </div>
+        <input type="text" name="username" class="form-control" id="username" placeholder="Username" ng-model="credentials.username" required>
+      </div>
+    </div>
+
+    <div class="row form-group">
+      <div class="col-md-6">
+        <div>
+          <label for="username" class="col-md-4 pull-left">Name: <b class="text-danger">*</b></label>
+          <div class="pull-right text-danger col-md-8" ng-show="registerForm.username.$error.required && registerForm.username.$dirty">Required!</div>
+        </div>
+        <input type="text" name="username" class="form-control" id="username" placeholder="Username" ng-model="credentials.username" required>
+      </div>
+      <div class="col-md-6">
+        <div>
+          <label for="username" class="col-md-4 pull-left">Email: <b class="text-danger">*</b></label>
+          <div class="pull-right text-danger col-md-8" ng-show="registerForm.username.$error.required && registerForm.username.$dirty">Required!</div>
+        </div>
+        <input type="text" name="username" class="form-control" id="username" placeholder="Username" ng-model="credentials.username" required>
+      </div>
+    </div>
+
+    <div class="row form-group">
+      <div class="col-md-6">
+        <div>
+          <label for="username" class="col-md-4 pull-left">Phone Number: <b class="text-danger">*</b></label>
+          <div class="pull-right text-danger col-md-8" ng-show="registerForm.username.$error.required && registerForm.username.$dirty">Required!</div>
+        </div>
+        <input type="text" name="username" class="form-control" id="username" placeholder="Username" ng-model="credentials.username" required>
+      </div>
+      <div class="col-md-6">
+        <div>
+          <label for="username" class="col-md-4 pull-left">Town: <b class="text-danger">*</b></label>
+          <div class="pull-right text-danger col-md-8" ng-show="registerForm.username.$error.required && registerForm.username.$dirty">Required!</div>
+        </div>
+        <input type="text" name="username" class="form-control" id="username" placeholder="Username" ng-model="credentials.username" required>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="text-center">
+        <a class="btn btn-default" href="#/home">Cancel</a>
+        <button name="login" ng-click="register(credentials, registerForm)" type="submit" class="btn btn-primary" ng-disabled="registerForm.username.$error.required || registerForm.password.$error.required || registerForm.confirmPassword.$error.required || registerForm.name.$error.required || registerForm.phone.$error.required || registerForm.email.$error.required || registerForm.email.$invalid">Register</button>
+      </div>
+    </div>
+
+  </fieldset>
+</form>
