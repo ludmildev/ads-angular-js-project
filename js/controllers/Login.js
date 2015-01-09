@@ -1,5 +1,5 @@
 
-app.controller('Login', function($scope, $log, $location, userData) {
+app.controller('Login', function($scope, $location, userData) {
 
     $scope.loginError = '';
 
@@ -7,12 +7,8 @@ app.controller('Login', function($scope, $log, $location, userData) {
         userData.login(loginData, function () {
             $location.path('#/');
         }, function (error) {
-            $scope.loginError = error.error_description;
+            $scope.loginError = error.data.error_description;
         });
     };
-
-    $scope.logout = function () {
-
-    }
 
 });

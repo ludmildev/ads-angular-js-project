@@ -1,4 +1,4 @@
-<form class="well">
+<form class="well" name="registerForm">
   <fieldset>
     <legend class="text-center">Register</legend>
     <div class="row form-group">
@@ -7,65 +7,67 @@
           <label for="username" class="col-md-4 pull-left">Username: <b class="text-danger">*</b></label>
           <div class="pull-right text-danger col-md-8" ng-show="registerForm.username.$error.required && registerForm.username.$dirty">Required!</div>
         </div>
-        <input type="text" name="username" class="form-control" id="username" placeholder="Username" ng-model="credentials.username" required>
+        <input type="text" name="username" class="form-control" id="username" placeholder="Username" ng-model="formData.username" required>
       </div>
     </div>
 
     <div class="row form-group">
       <div class="col-md-6">
         <div>
-          <label for="username" class="col-md-4 pull-left">Password: <b class="text-danger">*</b></label>
-          <div class="pull-right text-danger col-md-8" ng-show="registerForm.username.$error.required && registerForm.username.$dirty">Required!</div>
+          <label for="password" class="col-md-4 pull-left">Password: <b class="text-danger">*</b></label>
+          <div class="pull-right text-danger col-md-8" ng-show="registerForm.password.$error.required && registerForm.password.$dirty">Required!</div>
         </div>
-        <input type="text" name="username" class="form-control" id="username" placeholder="Username" ng-model="credentials.username" required>
+        <input type="text" name="password" class="form-control" id="password" placeholder="Password" ng-model="formData.password" required>
       </div>
       <div class="col-md-6">
         <div>
-          <label for="username" class="col-md-4 pull-left">Re-password: <b class="text-danger">*</b></label>
-          <div class="pull-right text-danger col-md-8" ng-show="registerForm.username.$error.required && registerForm.username.$dirty">Required!</div>
+          <label for="repassword" class="col-md-4 pull-left">Re-password: <b class="text-danger">*</b></label>
+          <div class="pull-right text-danger col-md-8" ng-show="registerForm.repassword.$error.required && registerForm.repassword.$dirty">Required!</div>
         </div>
-        <input type="text" name="username" class="form-control" id="username" placeholder="Username" ng-model="credentials.username" required>
-      </div>
-    </div>
-
-    <div class="row form-group">
-      <div class="col-md-6">
-        <div>
-          <label for="username" class="col-md-4 pull-left">Name: <b class="text-danger">*</b></label>
-          <div class="pull-right text-danger col-md-8" ng-show="registerForm.username.$error.required && registerForm.username.$dirty">Required!</div>
-        </div>
-        <input type="text" name="username" class="form-control" id="username" placeholder="Username" ng-model="credentials.username" required>
-      </div>
-      <div class="col-md-6">
-        <div>
-          <label for="username" class="col-md-4 pull-left">Email: <b class="text-danger">*</b></label>
-          <div class="pull-right text-danger col-md-8" ng-show="registerForm.username.$error.required && registerForm.username.$dirty">Required!</div>
-        </div>
-        <input type="text" name="username" class="form-control" id="username" placeholder="Username" ng-model="credentials.username" required>
+        <input type="text" name="repassword" class="form-control" id="repassword" placeholder="Retype password" ng-model="formData.repassword" required>
       </div>
     </div>
 
     <div class="row form-group">
       <div class="col-md-6">
         <div>
-          <label for="username" class="col-md-4 pull-left">Phone Number: <b class="text-danger">*</b></label>
-          <div class="pull-right text-danger col-md-8" ng-show="registerForm.username.$error.required && registerForm.username.$dirty">Required!</div>
+          <label for="name" class="col-md-4 pull-left">Name: <b class="text-danger">*</b></label>
+          <div class="pull-right text-danger col-md-8" ng-show="registerForm.name.$error.required && registerForm.name.$dirty">Required!</div>
         </div>
-        <input type="text" name="username" class="form-control" id="username" placeholder="Username" ng-model="credentials.username" required>
+        <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" ng-model="formData.name" required>
       </div>
       <div class="col-md-6">
         <div>
-          <label for="username" class="col-md-4 pull-left">Town: <b class="text-danger">*</b></label>
-          <div class="pull-right text-danger col-md-8" ng-show="registerForm.username.$error.required && registerForm.username.$dirty">Required!</div>
+          <label for="email" class="col-md-4 pull-left">Email: <b class="text-danger">*</b></label>
+          <div class="pull-right text-danger col-md-8" ng-show="registerForm.email.$dirty && registerForm.email.$invalid">Invalid Email!</div>
         </div>
-        <input type="text" name="username" class="form-control" id="username" placeholder="Username" ng-model="credentials.username" required>
+        <input type="email" name="email" class="form-control" id="email" placeholder="Email" ng-model="formData.email" required>
+      </div>
+    </div>
+
+    <div class="row form-group">
+      <div class="col-md-6">
+        <div>
+          <label for="phone" class="col-md-4 pull-left">Phone Number: <b class="text-danger">*</b></label>
+          <div class="pull-right text-danger col-md-8" ng-show="registerForm.phone.$error.required && registerForm.phone.$dirty">Required!</div>
+        </div>
+        <input type="text" name="phone" class="form-control" id="phone" placeholder="Phone Number" ng-model="formData.phone" required>
+      </div>
+      <div class="col-md-6">
+        <div>
+          <label for="town" class="col-md-4 pull-left">Town: <b class="text-danger">*</b></label>
+          <div class="pull-right text-danger col-md-8" ng-show="registerForm.town.$error.required && registerForm.town.$dirty">Required!</div>
+        </div>
+        <select class="form-control" name="town">
+          <option ng-repeat="town in towns" value="{{town.id}}">{{town.name}}</option>
+        </select>
       </div>
     </div>
 
     <div class="form-group row">
       <div class="text-center">
-        <a class="btn btn-default" href="#/home">Cancel</a>
-        <button name="login" ng-click="register(credentials, registerForm)" type="submit" class="btn btn-primary" ng-disabled="registerForm.username.$error.required || registerForm.password.$error.required || registerForm.confirmPassword.$error.required || registerForm.name.$error.required || registerForm.phone.$error.required || registerForm.email.$error.required || registerForm.email.$invalid">Register</button>
+        <a class="btn btn-default" href="#/login">Login</a>
+        <button ng-click="register(formData, registerForm)" type="submit" class="btn btn-primary" ng-disabled="registerForm.username.$error.required || registerForm.password.$error.required || registerForm.confirmPassword.$error.required || registerForm.name.$error.required || registerForm.phone.$error.required || registerForm.email.$error.required || registerForm.email.$invalid">Register</button>
       </div>
     </div>
 

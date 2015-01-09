@@ -30,17 +30,18 @@ app.controller('Home', function($scope, $log, $routeParams, categoriesData, town
                 else
                     $scope.noAdsFound = false;
 
-                $scope.maxSize = 10;
-                $scope.totalItems = data.numPages * $scope.maxSize;
+                //$scope.maxSize = 10;
+                $scope.totalItems = data.numItems;//data.numPages * $scope.maxSize;
                 $scope.currentPage = page;
 
                 $scope.setPage = function (pageNo) {
                     $scope.currentPage = pageNo;
                 };
 
-                $scope.pageChanged = function() {
-                    allAds($scope.currentPage);
-                    console.log($scope.currentPage);
+                $scope.pageChanged = function(pageNo) {
+                    allAds(pageNo);
+                    window.scrollTo(0, 0);
+                    $scope.loader = true;
                 };
 
                 window.scrollTo(0, 0);
@@ -53,11 +54,13 @@ app.controller('Home', function($scope, $log, $routeParams, categoriesData, town
     $scope.changeCategoryId = function(categoryId) {
         $scope.categoryId = categoryId;
         $scope.loader = true;
+        window.scrollTo(0, 0);
         allAds(1);
     };
     $scope.changeTownId = function(townId) {
         $scope.townId = townId;
         $scope.loader = true;
+        window.scrollTo(0, 0);
         allAds(1);
     };
 

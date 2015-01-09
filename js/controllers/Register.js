@@ -1,6 +1,11 @@
 
-app.controller('Register', function($scope) {
+app.controller('Register', function($scope, townsData) {
 
     $scope.registerError = '';
 
+    townsData.getTowns()
+        .$promise
+        .then(function(data){
+            $scope.towns = data;
+        });
 });
