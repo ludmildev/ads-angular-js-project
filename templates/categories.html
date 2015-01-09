@@ -1,0 +1,17 @@
+<div class="panel panel-info">
+    <div class="panel-heading text-center">
+        <h3 class="panel-title">Categories</h3>
+    </div>
+    <div class="panel-body">
+        <div class="list-group">
+            <a class="list-group-item pointer"
+               ng-class="(categoryId==undefined) ? 'active' : ''"
+               ng-click="changeCategoryId();">All</a>
+            <a ng-repeat="category in categories" ng-click="changeCategoryId(category.id);"
+               ng-class="(categoryId==category.id) ? 'active' : ''"
+               class="list-group-item pointer">
+                {{category.name}}
+            </a>
+        </div>
+    </div>
+</div>

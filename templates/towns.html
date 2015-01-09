@@ -1,0 +1,17 @@
+<div class="panel panel-info">
+    <div class="panel-heading text-center">
+        <h3 class="panel-title">Towns</h3>
+    </div>
+    <div class="panel-body">
+        <div class="list-group">
+            <a class="list-group-item pointer"
+               ng-class="(townId==undefined) ? 'active' : ''"
+               ng-click="changeTownId();">All</a>
+            <a ng-repeat="town in towns" ng-click="changeTownId(town.id);"
+               ng-class="(townId==town.id) ? 'active' : ''"
+               class="list-group-item pointer">
+                {{town.name}}
+            </a>
+        </div>
+    </div>
+</div>
