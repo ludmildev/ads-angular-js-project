@@ -4,10 +4,6 @@ var app = angular.module('adsApp', ['ngResource', 'ngRoute', 'ui.bootstrap'])
             templateUrl: 'templates/home.html',
             controller: 'Home'
         });
-        $routeProvider.when('/page/:StartPage', {
-            templateUrl: 'templates/home.html',
-            controller: 'Home'
-        });
         $routeProvider.when('/login', {
             templateUrl: 'templates/login.html',
             controller: 'Login'
@@ -15,6 +11,10 @@ var app = angular.module('adsApp', ['ngResource', 'ngRoute', 'ui.bootstrap'])
         $routeProvider.when('/register', {
             templateUrl: 'templates/register.html',
             controller: 'Register'
+        });
+        $routeProvider.when('/user/publish', {
+            templateUrl: 'templates/user-publish-ad.html',
+            controller: 'UserPublishAd'
         });
         $routeProvider.otherwise({
             'redirectTo' : '/'

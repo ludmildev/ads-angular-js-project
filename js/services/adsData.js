@@ -1,11 +1,10 @@
 app.factory('adsData', function ($resource, baseUrl) {
     var resource = $resource(
-        baseUrl + 'Ads/'//,
-        //{
-        //    StartPage: '@StartPage',
-        //    CategoryId: '@CategoryId',
-        //    TownId : '@TownId'
-        //}
+        baseUrl + 'Ads/',
+        null,
+        {
+            'update' : {method : 'PUT'}
+        }
     );
 
 	function getAll(page, categoryId, townId) {
@@ -16,6 +15,17 @@ app.factory('adsData', function ($resource, baseUrl) {
             TownId: townId
         });
 	}
+
+    function publishAd (adData) {
+        return resource.save({
+          "title": adData.title,
+          "text": adData.text,
+          "changeImage": adData.changeImage,
+          "imageDataURL": adData.imageDataURL,
+          "categoryId": adData.categoryId,
+          "townId": adData.townId
+        });
+    }
 
 	return {
 		getAllAds: getAll

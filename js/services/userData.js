@@ -12,7 +12,20 @@ app.factory('userData', function ($resource, session, baseUrl) {
 			});
 	}
 
+	function register(user, success, error) {
+		$resource(baseUrl + 'user/Register')
+			.save(user)
+			.$promise
+			.then(function (data) {
+				session.saveUserData(data);
+				success(data);
+			}, function (err){
+				error(err);
+			});
+	}
+
 	return {
-		login : login
+		login : login,
+		register : register
 	}
 });

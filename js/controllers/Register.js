@@ -1,5 +1,5 @@
 
-app.controller('Register', function($scope, townsData) {
+app.controller('Register', function($scope, townsData, userData, $location) {
 
     $scope.registerError = '';
 
@@ -8,4 +8,14 @@ app.controller('Register', function($scope, townsData) {
         .then(function(data){
             $scope.towns = data;
         });
+
+    $scope.register = function (formData, form) {
+		if (form.$valid) {
+			userData.register(formData, function () {
+	            $location.path('#/');
+	        }, function (error) {
+	            $scope.registerError = error.data.modelState[''][0];
+	        });
+		}
+    }
 });
