@@ -48,7 +48,29 @@
     				</div>
     			</div>
     		</div>
-    		<div class="col-md-6 well text-center">password</div>
+    		<div class="col-md-6 well">
+    			<div class="row borderBot mrgBot">
+    				<div class="col-md-12 text-center">Change Password</div>
+    			</div>
+    			<div class="row">
+    				<div class="col-md-12 mrgBot">
+    					Old Password: <br />
+    					<input ng-model="password.oldPassword" type="password" />
+    				</div>
+    				<div class="col-md-12 mrgBot">
+    					New Password: <br />
+    					<input ng-model="password.newPassword" type="password" />
+    				</div>
+    				<div class="col-md-12 mrgBot">
+    					Confirm New Password: <br />
+    					<input ng-model="password.confirmPassword" type="password" />
+    				</div>
+    				<div class="col-md-12 mrgBot mrgTop text-center">
+    					<a href="#/" class="btn btn-success">Cancel</a>
+    					<div ng-click="changePassword(password);" class="btn btn-success">Change Password</div>
+    				</div>
+    			</div>
+    		</div>
     	</div>
     </div>
 </div>

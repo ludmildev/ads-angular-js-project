@@ -29,5 +29,18 @@ app.controller('EditUserProfile', function($scope, $routeParams, userData, towns
                 $scope.editMessage = data.message;
             });
     };
+    $scope.changePassword = function (data) {
+        userData.changePassword(data)
+            .$promise
+            .then(function (data){
+                $scope.editMessage = data.message;
+            }, function (error) {
+
+                if (error.data.modelState[''])
+                    $scope.editMessage = error.data.modelState[''][0];
+                else
+                    $scope.editMessage = error.data.modelState['model.ConfirmPassword'][0];
+            });
+    };
 
 });

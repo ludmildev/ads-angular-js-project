@@ -46,10 +46,23 @@ app.factory('userData', function ($resource, session, baseUrl) {
 			}).update(userData);
 	}
 
+	function changePassword (passData) {
+		return $resource(baseUrl + 'user/changePassword', {}, 
+			{
+				update : {
+	                method: 'PUT', 
+	                headers : {
+	                  'Authorization' : session.getHeaders()
+	                }
+              	}
+			}).update(passData);	
+	}
+
 	return {
 		login : login,
 		register : register,
 		getUserData : getUserData,
-		updateUserData : updateUserData
+		updateUserData : updateUserData,
+		changePassword : changePassword
 	}
 });
