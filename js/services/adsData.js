@@ -74,6 +74,22 @@ app.factory('adsData', function ($resource, baseUrl, session) {
     return resource.update();
   }
 
+  function getAdById (adId) {
+    var resource = $resource(
+        baseUrl + 'user/ads/'+adId, {},
+        {
+            get : {
+              method: 'GET', 
+              headers : {
+                'Authorization' : session.getHeaders()
+              }
+            }
+        }
+    );
+
+    return resource.get();
+  }
+
 	return {
 		getAllAds: getAll,
     publishAd : publishAd,
