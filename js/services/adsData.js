@@ -8,7 +8,7 @@ app.factory('adsData', function ($resource, baseUrl, session) {
 
 	function getAll(page, categoryId, townId) {
 		return resource.get({
-            PageSize : 15,
+            PageSize : 10,
             StartPage: page,
             CategoryId: categoryId,
             TownId: townId
@@ -52,15 +52,32 @@ app.factory('adsData', function ($resource, baseUrl, session) {
     );
 
     return resource.get({
-      PageSize : 15,
+      PageSize : 10,
       StartPage: data.page,
       status : data.status
     });
   }
 
+  function markAd(adId, status) {
+    var resource = $resource(
+        baseUrl + 'user/ads/'+status+'/'+adId, {},
+        {
+            update : {
+              method: 'PUT', 
+              headers : {
+                'Authorization' : session.getHeaders()
+              }
+            }
+        }
+    );
+
+    return resource.update();
+  }
+
 	return {
 		getAllAds: getAll,
     publishAd : publishAd,
-    getUserAds : getUserAds
+    getUserAds : getUserAds,
+    markAd : markAd
 	};
 })

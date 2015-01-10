@@ -1,26 +1,15 @@
 
-app.controller('UserAds', function($scope, adsData, session, categoriesData, townsData) {
+app.controller('UserAds', function($scope, $routeParams, adsData, session, categoriesData, townsData) {
 
     $scope.noAdsFound = false;
     $scope.loader = true;
-    var adsProps = {
+    $scope.adsProps = {
         status: null,
         page: 1
     };
 
-	categoriesData.getCategories()
-        .$promise
-        .then(function (data){
-            $scope.categories = data;
-        });
-    townsData.getTowns()
-        .$promise
-        .then(function (data){
-            $scope.towns = data;
-        });
-
-    function getUserAds() {
-        adsData.getUserAds(adsProps)
+    function getUserAds(page) {
+        adsData.getUserAds($scope.adsProps)
         .$promise
         .then(function (data){
             $scope.ads = data.ads;
@@ -32,9 +21,34 @@ app.controller('UserAds', function($scope, adsData, session, categoriesData, tow
 
             $scope.loader = false;
 
+            $scope.totalItems = data.numItems;
+            $scope.totalPages = data.numPages;
+            $scope.adsProps.page = page;
+
+            $scope.setPage = function (pageNo) {
+                $scope.adsProps.page = pageNo;
+            };
+
+            $scope.pageChanged = function(pageNo) {
+                getUserAds(pageNo);
+                window.scrollTo(0, 0);
+                $scope.loader = true;
+            };
+
         });
     }
-    
-    getUserAds();
+
+    $scope.changeStatus = function (status) {
+        $scope.adsProps.status = status;
+        getUserAds(1);
+    }
+
+    $scope.markAd = function (adId, status) {
+        adsData.markAd(adId, status).$promise.then(function(){
+            getUserAds($scope.adsProps.page);
+        });
+    }
+
+    getUserAds($routeParams.StartPage);
 
 });

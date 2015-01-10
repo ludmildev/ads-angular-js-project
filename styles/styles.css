@@ -1,8 +1,11 @@
 .txt16 { font-size: 16px;}
 .mrgBot { margin-bottom: 5px;}
+.mrgTop { margin-top: 5px;}
 .border {border: 1px solid #ccc;}
 .mrgBot{ margin-bottom: 5px;}
 .borderBot {border-bottom: 1px solid #ccc;}
+.borderRight {border-right: 1px solid #ccc;}
+.pad2 {padding: 10px;}
 .adImage {
     max-height: 110px;
     max-width: 110px;
