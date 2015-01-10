@@ -20,6 +20,14 @@ var app = angular.module('adsApp', ['ngResource', 'ngRoute', 'ui.bootstrap'])
             templateUrl: 'templates/user-ads.html',
             controller: 'UserAds'
         });
+        $routeProvider.when('/user/ads/delete/:id', {
+            templateUrl: 'templates/delete-ad.html',
+            controller: 'DeleteAd'
+        });
+        $routeProvider.when('/user/profile', {
+            templateUrl: 'templates/edit-user-profile.html',
+            controller: 'EditUserProfile'
+        });
         $routeProvider.otherwise({
             'redirectTo' : '/home'
         });

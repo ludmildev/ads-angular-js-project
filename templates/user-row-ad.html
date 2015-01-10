@@ -15,11 +15,11 @@
 					</div>
 					<div class="row">
 						<div class="col-md-4">Category:</div>
-						<div class="col-md-8">{{ad.categoryName}}</div>
+						<div class="col-md-8">{{ad.categoryName ? ad.categoryName : 'not set'}}</div>
 					</div>
 					<div class="row">
 						<div class="col-md-4">Town:</div>
-						<div class="col-md-8">{{ad.townName}}</div>
+						<div class="col-md-8">{{ad.townName ? ad.townName : 'not set'}}</div>
 					</div>
 				</div>
 			</div>
@@ -35,7 +35,7 @@
 					<div ng-if="ad.status == 'Inactive'">
 						<div class="mrgBot"><div class="btn btn-success" style="width: 90%;" ng-click="editAd();">Edit</div></div>
 						<div class="mrgBot"><div class="btn btn-success" style="width: 90%;" ng-click="markAd(ad.id, 'publishagain');">Publish Again</div></div>
-						<div class="mrgBot"><div class="btn btn-success" style="width: 90%;" ng-click="deleteAd();">Delete</div></div>
+						<div class="mrgBot"><a href="#/user/ads/delete/{{ad.id}}" class="btn btn-success" style="width: 90%;">Delete</a></div>
 					</div>
 				</div>
 			</div>

@@ -90,11 +90,28 @@ app.factory('adsData', function ($resource, baseUrl, session) {
     return resource.get();
   }
 
+  function deleteAd (adId) {
+    var resource = $resource(
+          baseUrl + 'user/Ads/'+adId, {},
+          {
+              delete : {
+                method: 'DELETE', 
+                headers : {
+                  'Authorization' : session.getHeaders()
+                }
+              }
+          }
+      );
+
+      return resource.delete();
+  }
+
 	return {
 		getAllAds: getAll,
     publishAd : publishAd,
     getUserAds : getUserAds,
     markAd : markAd,
-    getAdById: getAdById
+    getAdById: getAdById,
+    deleteAd : deleteAd
 	};
 })
