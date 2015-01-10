@@ -16,10 +16,15 @@ var app = angular.module('adsApp', ['ngResource', 'ngRoute', 'ui.bootstrap'])
             templateUrl: 'templates/user-publish-ad.html',
             controller: 'UserPublishAd'
         });
+        $routeProvider.when('/user/ads', {
+            templateUrl: 'templates/user-ads.html',
+            controller: 'UserAds'
+        });
         $routeProvider.otherwise({
             'redirectTo' : '/'
         });
     });
 
 //http://localhost:1337/api/
+//http://softuni-ads.azurewebsites.net/api/
 app.constant('baseUrl', 'http://softuni-ads.azurewebsites.net/api/');

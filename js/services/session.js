@@ -22,6 +22,16 @@ app.factory('session', function () {
     		return getUserData().username;
     }
 
+    function getAccessToken () {
+        if (isLogged())
+            return getUserData().access_token;
+    }
+
+    function getHeaders () {
+        if (isLogged())
+            return 'Bearer ' + getAccessToken();
+    }
+
     function logout() {
     	localStorage.clear();
     }
@@ -31,6 +41,7 @@ app.factory('session', function () {
         getUserData : getUserData,
         isLogged : isLogged,
         getUserName : getUserName,
+        getHeaders : getHeaders,
         logout : logout
     }
 });

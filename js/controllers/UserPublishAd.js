@@ -1,11 +1,11 @@
 
 app.controller('UserPublishAd', function($scope, $location, adsData, session, categoriesData, townsData) {
 
-$scope.imageData = '';
-$scope.newAdData = {
-            townId: null,
-            categoryId: null
-        };
+    $scope.imageData = '';
+    $scope.adData = {
+        townId: 0,
+        categoryId: 0
+    };
 
 	categoriesData.getCategories()
         .$promise
@@ -19,21 +19,21 @@ $scope.newAdData = {
         });
     
     $scope.fileSelected = function(inputData) {
-        delete $scope.newAdData.imageData;
+        delete $scope.adData.ImageDataURL;
         var file = inputData.files[0];
 
         if (file.type.match(/image\/.*/)) {
-            var reader = new FileReader();
+            var image = new FileReader();
 
-            reader.onload = function() {
-                $scope.newAdData.imageData = reader.result;
-                $('.ad-image').attr('src', reader.result);
+            image.onload = function() {
+                $scope.adData.ImageDataURL = image.result;
+                $('.ad-image').attr('src', image.result);
             };
 
-            reader.readAsDataURL(file);
+            image.readAsDataURL(file);
 
         } else {
-            $scope.newAdData.imageData = null;
+            $scope.adData.ImageDataURL = null;
             $('.ad-image').attr('src', 'images/no_img.png');
         }
     };

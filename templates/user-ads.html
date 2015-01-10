@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-md-3">
+        <left-navigation></left-navigation>
+    </div>
+    <div class="col-md-9">
+        <div class="text-center" ng-if="loader">
+            <img src="images/loading.gif" width="250px" />
+        </div>
+        <div class="col-centered" ng-if="noAdsFound">
+            <h4 class="black-text text-center">No ads founnd.</h4>
+        </div>
+        <user-row-ad ng-if="!noAdsFound"></user-row-ad>
+    </div>
+</div>

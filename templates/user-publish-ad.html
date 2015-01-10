@@ -28,7 +28,7 @@
 						</div>
 					</div>
 					<div class="col-md-4" >
-						<img src="images/no_img.png" alt="" class="ad-image img-responsive">
+						<img src="images/no_img.png" alt="" class="ad-image" width="200px">
 					</div>
 				</div>
 				<div class="row">
@@ -56,7 +56,7 @@
 						</div>
 						<div class="form-group">
 							<label for="selectCategory" class="col-md-3 control-label">Category:</label>
-							<div class="col-md-9 col-sm-8 col-xs-8">
+							<div class="col-md-9">
 								<select class="form-control" id="selectCategory" ng-model="adData.categoryId">
 									<option value="null" selected>None</option>
 									<option ng-repeat="category in categories" value="{{category.id}}">{{category.name}}</option>
@@ -66,9 +66,9 @@
 					</div>
 				</div>
 				<div class="form-group row">
-					<div class="centerd-buttons">
+					<div class="text-center">
 						<a class="btn btn-default" href="#/user/ads">Cancel</a>
-						<button name="login" ng-click="publishAd(adData, adForm)" type="submit" class="btn btn-primary" ng-disabled="adForm.$invalid">Submit</button>
+						<button name="login" ng-click="publishAd(adData, adForm);" type="submit" class="btn btn-primary" ng-disabled="adForm.$invalid">Submit</button>
 					</div>
 				</div>
 			</fieldset>
