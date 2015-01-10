@@ -1,5 +1,5 @@
 
-app.controller('UserAds', function($scope, $routeParams, adsData, session, categoriesData, townsData) {
+app.controller('UserAds', function($scope, adsData, session, categoriesData, townsData) {
 
     $scope.noAdsFound = false;
     $scope.loader = true;
@@ -49,6 +49,6 @@ app.controller('UserAds', function($scope, $routeParams, adsData, session, categ
         });
     }
 
-    getUserAds($routeParams.StartPage);
+    getUserAds();
 
 });

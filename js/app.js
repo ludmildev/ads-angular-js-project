@@ -1,6 +1,6 @@
 var app = angular.module('adsApp', ['ngResource', 'ngRoute', 'ui.bootstrap'])
 	.config(function ($routeProvider) {
-        $routeProvider.when('/', {
+        $routeProvider.when('/home', {
             templateUrl: 'templates/home.html',
             controller: 'Home'
         });
@@ -12,7 +12,7 @@ var app = angular.module('adsApp', ['ngResource', 'ngRoute', 'ui.bootstrap'])
             templateUrl: 'templates/register.html',
             controller: 'Register'
         });
-        $routeProvider.when('/user/publish', {
+        $routeProvider.when('/user/ads/publish', {
             templateUrl: 'templates/user-publish-ad.html',
             controller: 'UserPublishAd'
         });
@@ -21,7 +21,7 @@ var app = angular.module('adsApp', ['ngResource', 'ngRoute', 'ui.bootstrap'])
             controller: 'UserAds'
         });
         $routeProvider.otherwise({
-            'redirectTo' : '/'
+            'redirectTo' : '/home'
         });
     });
 

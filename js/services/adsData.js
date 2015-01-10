@@ -94,6 +94,7 @@ app.factory('adsData', function ($resource, baseUrl, session) {
 		getAllAds: getAll,
     publishAd : publishAd,
     getUserAds : getUserAds,
-    markAd : markAd
+    markAd : markAd,
+    getAdById: getAdById
 	};
 })
