@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-md-3">
+        <left-navigation></left-navigation>
+    </div>
+    <div class="col-md-9">
+    	<div class="row">
+    		<div class="col-md-12">
+				<div ng-if="editMessage != ''">
+				    <div class="alert alert-dismissable alert-success">
+				        <button type="button" class="close" data-dismiss="alert">×</button>
+				        <strong>{{editMessage}}</strong>
+				    </div>
+				</div>
+			</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-md-6 well">
+    			<div class="row borderBot mrgBot">
+    				<div class="col-md-12 text-center">Edit Profile</div>
+    			</div>
+    			<div class="row">
+    				<div class="col-md-12 mrgBot">
+    					Name: <br />
+    					<input ng-model="user.name" value="{{user.name}}"  />
+    				</div>
+    				<div class="col-md-12 mrgBot">
+    					Email: <br />
+    					<input ng-model="user.email" />
+    				</div>
+    				<div class="col-md-12 mrgBot">
+    					Phone: <br />
+    					<input ng-model="user.phoneNumber" />
+    				</div>
+    				<div class="col-md-12 mrgBot">
+    					Town: <br />
+    					<select ng-model="user.townId">
+    						<option value="null">None</option>
+    						<option ng-repeat="town in towns"
+    							ng-selected="town.id == user.townId"
+    							value="{{town.id}}">
+    							{{town.name}}
+    						</option>
+    					</select>
+    				</div>
+    				<div class="col-md-12 mrgBot mrgTop text-center">
+    					<a href="#/" class="btn btn-success">Cancel</a>
+    					<div ng-click="updateProfile(user);" class="btn btn-success">Update</div>
+    				</div>
+    			</div>
+    		</div>
+    		<div class="col-md-6 well text-center">password</div>
+    	</div>
+    </div>
+</div>

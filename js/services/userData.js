@@ -24,8 +24,32 @@ app.factory('userData', function ($resource, session, baseUrl) {
 			});
 	}
 
+	function getUserData () {
+		return $resource(baseUrl + 'user/profile', {}, {
+			get : {
+                method: 'GET', 
+                headers : {
+                  'Authorization' : session.getHeaders()
+                }
+              }
+			}).get();
+	}
+
+	function updateUserData (userData) {
+		return $resource(baseUrl + 'user/profile', {}, {
+			update : {
+                method: 'PUT', 
+                headers : {
+                  'Authorization' : session.getHeaders()
+                }
+              }
+			}).update(userData);
+	}
+
 	return {
 		login : login,
-		register : register
+		register : register,
+		getUserData : getUserData,
+		updateUserData : updateUserData
 	}
 });
